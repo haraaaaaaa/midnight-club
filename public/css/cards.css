@@ -56,9 +56,17 @@
 }
 
 .card-content p {
+  width: 100%;
+  color: #333;
+  font-style: italic;
   margin-bottom: 1rem;
-  font-size: 0.875rem;
-  color: #4a5568;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px; /* fallback */
+  max-height: 32px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .card-content .read-more {

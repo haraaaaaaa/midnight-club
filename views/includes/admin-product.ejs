@@ -1,6 +1,25 @@
-<li class="list__list-item">
-    <h1> <%= product.title %> </h1>
-    <h3> <%= product.price %> €</h3>
-    <a href="/admin/products/<%= product._id %>/edit">Edit</a>
-    <a href="/admin/products/<%= product._id %>/delete">Delete</a>
+<li>
+  <div class="card">
+    <a href="#">
+      <img class="rounded-t-lg" src="<%= product.imgUrl %>" alt="" />
+    </a>
+    <div class="card-content">
+      <a href="/products/<%= product._id %>">
+        <h5><%= product.title %></h5>
+      </a>
+      <p><%= product.description %></p>
+      <a href="/admin/products/<%= product._id %>/edit" class="read-more">
+        Edit
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+        </svg>
+      </a>
+      <a href="/admin/products/<%= product._id %>/delete" class="read-more">
+        Delete
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+        </svg>
+      </a>
+    </div>
+  </div>
 </li>

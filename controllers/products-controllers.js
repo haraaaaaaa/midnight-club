@@ -32,9 +32,3 @@ exports.getProduct = async (request, response) => {
     product,
   });
 };
-
-exports.addCategory = async (request, response) => {
-  const { categoryName } = request.body;
-  console.log("categoryName", categoryName);
-  response.redirect("/");
-};

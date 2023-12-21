@@ -30,7 +30,7 @@ app.use(cartRoutes);
 app.get("*", errorControllers.get404);
 
 mongoose.connect(MongoURI).then(() => {
-  console.log("connected to MongoDB!");
+  console.log("Connected to MongoDB!");
   app.listen(5000, () => {
     console.log("Server running on port 5000.");
   });

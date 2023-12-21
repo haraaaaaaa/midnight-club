@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Product = mongoose.model("products");
+const Category = mongoose.model("categories");
 const path = require("path");
 const fs = require("fs");
 
@@ -25,17 +26,15 @@ exports.getProduct = async (request, response) => {
       error,
     });
 
-  const imagesDataPath = path.join(__dirname, "../Images");
-
-  fs.readdir(imagesDataPath, (err, images) => {
-    if (err) return res.send("Error occurred");
-
-    const imageData = images.map((image) => image);
-  });
-
   response.render("product-detail", {
     pageTitle: product.title,
     path: "/products",
     product,
   });
+};
+
+exports.addCategory = async (request, response) => {
+  const { categoryName } = request.body;
+  console.log("categoryName", categoryName);
+  response.redirect("/");
 };

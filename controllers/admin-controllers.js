@@ -12,12 +12,12 @@ exports.getAddProduct = async (request, response) => {
 };
 
 exports.postAddProduct = async (request, response) => {
-    const { title, price, category, imgUrl } = request.body;
+  const { title, price, category, imgUrl, description } = request.body;
 
-    await Product.create({ title, price, category, imgUrl});
+  await Product.create({ title, price, description, category, imgUrl });
 
-    response.redirect("/");
-  };
+  response.redirect("/");
+};
 
 exports.getAdminProducts = async (request, response) => {
   const products = await Product.find();
